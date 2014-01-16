@@ -1,0 +1,54 @@
+/* line 9, reset.scss */
+html, body, div, span, object, iframe,
+h1, h2, h3, p, blockquote, pre, del,
+dfn, em, img, small, strong, sub, sup,
+var, b, i, ol, ul, li, fieldset, form,
+label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section,
+summary, time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 22, reset.scss */
+body {
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+/* line 28, reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 32, reset.scss */
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 39, reset.scss */
+input, select {
+  vertical-align: middle;
+}
+
+/* line 43, reset.scss */
+input:focus, input:hover, textarea:focus, textarea:hover {
+  outline: 0;
+  box-shadow: 0 0 0 #fff;
+  border: 0 solid #fff;
+}

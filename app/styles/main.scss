@@ -1,0 +1,175 @@
+/*****SASS ASSETS******/ 
+
+    // Variables 
+$heading-textshadow: #eee; //#9e9e9e;
+$base-width: 50%; 
+$text-bubble-radius: 10px; 
+$text-bubble-color: #666;
+$button-color: #fff;
+
+    // Mixins
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $spread, $blur, $color) {
+    -webkit-box-shadow: $top $left $spread $blur $color;
+    -moz-box-shadow: $top $left $spread $blur $color;
+    box-shadow: $top $left $spread $blur $color;  
+}
+
+@mixin top-gradient($top-color, $top-stop-pctg, $bottom-color, $bottom-stop-pctg) {
+    background-image: -ms-linear-gradient(top, $top-color $top-stop-pctg, $bottom-color $bottom-stop-pctg);
+    background-image: -moz-linear-gradient(top, $top-color $top-stop-pctg, $bottom-color $bottom-stop-pctg);
+    background-image: -o-linear-gradient(top, $top-color $top-stop-pctg, $bottom-color $bottom-stop-pctg); 
+    background-image: -webkit-linear-gradient(top, $top-color $top-stop-pctg, $bottom-color $bottom-stop-pctg);
+    background-image: linear-gradient(to bottom, $top-color $top-stop-pctg, $bottom-color $bottom-stop-pctg);
+}
+
+/*****RESETS******/
+
+@import "reset";
+@import url(http://fonts.googleapis.com/css?family=Delius);
+
+body {
+    font-family: 'Delius', cursive;
+}
+
+/*****APPLICATION STYLING******/
+
+.container {
+    width: $base-width;
+    margin: 0 25%;
+}
+
+.bsFirstPrompt, section {
+    width: 100%;
+    float: left;
+    margin-bottom: 5%;
+}   .bsFirstPrompt h1 {
+        font-size: 2em;
+        text-align: center;
+}   .bsFirstPrompt p {
+        text-align: center;
+        display: inline-block;
+        margin-left: 1%;
+}
+
+.bsTextBubble {
+    position: relative;
+    width: 380px;
+    height: 200px;
+    margin: 1.5% 30%;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+    border: 8px solid $text-bubble-color;
+    @include border-radius($text-bubble-radius);
+    @include box-shadow(2px, 2px, 4px, 0, #888);
+    textarea {
+        width: 99%;
+        height: 97%;
+        border: 0 solid #fff;
+        box-shadow: 0 0 0 #fff;
+    }
+    textarea:hover, textarea:focus {
+        @include top-gradient(#999, 0%, #fff, 3%);
+    }   
+}   .rightBubble:before, .rightBubble:after, .leftBubble:before, .leftBubble:after {    
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+}   .rightBubble:before, .leftBubble:before {
+        border: 35px solid;    
+}   .rightBubble:after, .leftBubble:after {
+        border: 30px solid;
+}   .rightBubble:before {
+        left: 370px;
+        top: 90px;
+        border-color: transparent transparent $text-bubble-color $text-bubble-color;
+}   .rightBubble:after {
+        left: 363px;
+        top: 94px;
+        border-color: transparent transparent #fff #fff;
+}   .leftBubble:before {
+        left: -75px;
+        top: 90px;
+        border-color: transparent $text-bubble-color $text-bubble-color transparent;
+}   .leftBubble:after {
+        left: -60px;
+        top: 94px;
+        border-color: transparent #fff #fff transparent;
+}   .bsTextBubble button {
+        border-bottom: 2px solid #999; 
+        border-right: 2px solid #ccc;
+        cursor: pointer;
+        padding: 3% 5%;
+        letter-spacing: .03em;
+        outline: none; 
+        font-size: 1.2em; // Need to change this to position: fixed in the future. 
+        @include top-gradient($button-color, 40%, darken($button-color, 15%), 100%);
+}       .bsTextBubble button:hover {
+                    @include top-gradient(#fff, 40%, #eee, 100%);
+}       .bsTextBubble button:active {
+                    border-bottom: 2px solid #777;
+                    border-right: 2px solid #777;  
+}
+
+.leftOrientation {
+    display: inline;
+    float: left;
+}
+.rightOrientation {
+    display: inline;
+    float: right;
+}
+.napoleon {
+    position: relative; 
+    top: -15%;
+    right: 7%;
+}
+.replyPic {
+    margin-top: 11%;
+}
+
+/*  .bsTextBubble input {
+        width: 100%;
+        height: 100%;
+} */
+
+
+footer p {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    width: 25%;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 1068px) and (min-width: 768px)  {
+
+    .container {
+        width: $base-width;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
