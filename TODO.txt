@@ -1,0 +1,6 @@
+1. CSS - Need to fix the bubble text for responsive.
+2. Disable comments if the field is empty
+3. Re-enable replies 
+4 - Convert old nodes into active text holding nodes
+5 - Get and store post data.
+6 - Deal with Nappy

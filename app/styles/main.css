@@ -69,31 +69,37 @@ body {
 }
 
 /* line 49, main.scss */
-.bsFirstPrompt, section {
-  width: 100%;
-  float: left;
-  margin-bottom: 5%;
+header {
+  width: 70%;
+  margin: 1% 15%;
 }
 
-/* line 53, main.scss */
-.bsFirstPrompt h1 {
+/* line 52, main.scss */
+header h1 {
   font-size: 2em;
   text-align: center;
 }
 
-/* line 56, main.scss */
-.bsFirstPrompt p {
+/* line 55, main.scss */
+header p {
   text-align: center;
   display: inline-block;
   margin-left: 1%;
 }
 
-/* line 62, main.scss */
+/* line 61, main.scss */
+section {
+  width: 100%;
+  float: left;
+  margin: 2% 0 10% 0;
+}
+
+/* line 67, main.scss */
 .bsTextBubble {
   position: relative;
-  width: 380px;
+  width: 50%;
   height: 200px;
-  margin: 1.5% 30%;
+  margin: 1.5% 25% 10% 25%;
   text-align: center;
   line-height: 100px;
   background-color: #fff;
@@ -107,14 +113,14 @@ body {
   -moz-box-shadow: 2px 2px 4px 0 #888888;
   box-shadow: 2px 2px 4px 0 #888888;
 }
-/* line 73, main.scss */
+/* line 78, main.scss */
 .bsTextBubble textarea {
   width: 99%;
   height: 97%;
   border: 0 solid #fff;
   box-shadow: 0 0 0 #fff;
 }
-/* line 79, main.scss */
+/* line 84, main.scss */
 .bsTextBubble textarea:hover, .bsTextBubble textarea:focus {
   background-image: -ms-linear-gradient(top, #999999 0%, white 3%);
   background-image: -moz-linear-gradient(top, #999999 0%, white 3%);
@@ -123,7 +129,7 @@ body {
   background-image: linear-gradient(to bottom, #999999 0%, #ffffff 3%);
 }
 
-/* line 82, main.scss */
+/* line 87, main.scss */
 .rightBubble:before, .rightBubble:after, .leftBubble:before, .leftBubble:after {
   content: ' ';
   position: absolute;
@@ -131,45 +137,45 @@ body {
   height: 0;
 }
 
-/* line 87, main.scss */
+/* line 92, main.scss */
 .rightBubble:before, .leftBubble:before {
   border: 35px solid;
 }
 
-/* line 89, main.scss */
+/* line 94, main.scss */
 .rightBubble:after, .leftBubble:after {
   border: 30px solid;
 }
 
-/* line 91, main.scss */
+/* line 96, main.scss */
 .rightBubble:before {
-  left: 370px;
+  right: -4.8em;
   top: 90px;
   border-color: transparent transparent #666666 #666666;
 }
 
-/* line 95, main.scss */
+/* line 101, main.scss */
 .rightBubble:after {
-  left: 363px;
+  right: -3.75em;
   top: 94px;
   border-color: transparent transparent #fff #fff;
 }
 
-/* line 99, main.scss */
+/* line 106, main.scss */
 .leftBubble:before {
   left: -75px;
   top: 90px;
   border-color: transparent #666666 #666666 transparent;
 }
 
-/* line 103, main.scss */
+/* line 110, main.scss */
 .leftBubble:after {
   left: -60px;
   top: 94px;
   border-color: transparent #fff #fff transparent;
 }
 
-/* line 107, main.scss */
+/* line 114, main.scss */
 .bsTextBubble button {
   border-bottom: 2px solid #999;
   border-right: 2px solid #ccc;
@@ -178,6 +184,8 @@ body {
   letter-spacing: .03em;
   outline: none;
   font-size: 1.2em;
+  position: relative;
+  top: -1.5em;
   background-image: -ms-linear-gradient(top, white 40%, #d9d9d9 100%);
   background-image: -moz-linear-gradient(top, white 40%, #d9d9d9 100%);
   background-image: -o-linear-gradient(top, white 40%, #d9d9d9 100%);
@@ -185,7 +193,7 @@ body {
   background-image: linear-gradient(to bottom, #ffffff 40%, #d9d9d9 100%);
 }
 
-/* line 116, main.scss */
+/* line 125, main.scss */
 .bsTextBubble button:hover {
   background-image: -ms-linear-gradient(top, white 40%, #eeeeee 100%);
   background-image: -moz-linear-gradient(top, white 40%, #eeeeee 100%);
@@ -194,32 +202,40 @@ body {
   background-image: linear-gradient(to bottom, #ffffff 40%, #eeeeee 100%);
 }
 
-/* line 118, main.scss */
+/* line 127, main.scss */
 .bsTextBubble button:active {
   border-bottom: 2px solid #777;
   border-right: 2px solid #777;
 }
 
-/* line 123, main.scss */
+/* line 130, main.scss */
+.bsTextBubble p {
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 1.5em;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 138, main.scss */
 .leftOrientation {
-  display: inline;
-  float: left;
+  position: absolute;
+  margin-left: -9%;
 }
 
-/* line 127, main.scss */
+/* line 144, main.scss */
 .rightOrientation {
-  display: inline;
-  float: right;
+  position: absolute;
+  right: 12%;
 }
 
-/* line 131, main.scss */
+ /*
 .napoleon {
-  position: relative;
-  top: -15%;
-  right: 7%;
-}
-
-/* line 136, main.scss */
+    position: relative; 
+    top: -15%;
+    right: 7%;
+}*/
+/* line 155, main.scss */
 .replyPic {
   margin-top: 11%;
 }
@@ -228,7 +244,7 @@ body {
         width: 100%;
         height: 100%;
 } */
-/* line 146, main.scss */
+/* line 165, main.scss */
 footer p {
   position: fixed;
   bottom: 5px;
@@ -238,29 +254,8 @@ footer p {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (max-width: 1068px) and (min-width: 768px) {
-  /* line 156, main.scss */
+  /* line 175, main.scss */
   .container {
     width: 50%;
-  }
-
-  /* Remove the padding we set earlier */
-  /* line 163, main.scss */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  /* line 168, main.scss */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 172, main.scss */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
