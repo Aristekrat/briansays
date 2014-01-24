@@ -2,9 +2,9 @@ Brian Says
 =================
 Where to Find Detailed Comments by Topic
 
-Javascript - app/scripts/app.js
-CSS - app/styles/main.scss
-HTML - app/views/index.html
+1. Javascript - app/scripts/app.js
+2. CSS - app/styles/main.scss
+3. HTML - app/views/index.html
 
 =================
 Overview
