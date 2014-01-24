@@ -1,0 +1,59 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Brian Says</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+<!--HTML Notes
+  1) HTML5. I often use the new HTML5 tags in my markup. Header, footer, section, and the placeholder / autofocus attribute for textarea are the HTML5 elements I used in
+  briansays.
+  2) HTML style convention: I use indentations to denote a parent child relationship. I break up unrelated blocks of HTML with a newline.
+-->
+
+<body ng-app="briansaysApp">
+    <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<div class="container" ng-controller="MainCtrl">
+
+<header>
+  <h1>Brian Says,</h1>
+    <p>Make your new bestest employee say whatever you please.</p>
+    <p>All Brian Says sessions are private. No one else can see them.</p>
+</header>
+
+<textbubble add-brian="addBrian(message)" add-reply="addReply(message)" req-type="{{reqType}}" get-random="getRandom(0,7)" initial="You can either type a comment or just press the button">
+  
+</textbubble>
+
+<footer>
+  <p>I created Brian Says to demonstrate my development process. The code behind this project is <a href="https://github.com/Aristekrat/briansays">available here</a>, fairly simple, and heavily annotated with explanatory comments.</p>
+</footer>
+    
+</div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>-->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <!--According to best practice I load JS at the end of an html document. I also prefer loading javascript libraries from a CDN so I can
+    get the speed and bandwidth benefits.-->
+</body>

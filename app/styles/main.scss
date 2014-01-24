@@ -1,3 +1,23 @@
+/***BRIAN'S CSS NOTES
+1) I believe that CSS is a deceptively difficult 'language'. Although CSS doesn't have very much functionality and it is very easy to make the application do things with CSS,
+constructing stable CSS that will behave normally across radically different viewports can be very, very hard. This application demonstrates my ability to do that at a high level.
+The text box and the text arrow is pure CSS. It can adapt intelligently to the full scope of desktop / laptop sizes without losing it's position. The same is true of the images.
+I didn't need to brute-force my way through extensive media query targeting. 
+2) My Style Conventions: I like to seperate unrelated styling blocks by a newline and group related styling in uninterrupted blocks.
+I relate parent and child styles by attaching the child to the parent and adding an indentation, like so: 
+.parent {
+    styling: styling!;
+}   .child {
+        styling: OMGSTYLING!;
+}
+-Whenever I can, I like to set a parent class name and then dive into it's children with attributes. I never go deeper than three selectors. Ever.
+-I would normally not use a plain selector like 'header', because it causes conflicts as an application grows and therefore is not maintaible. 
+However, I did that in the case of briansays because it's a small application that I knew wouldn't grow. 
+-Naming convention: to prevent naming conflicts I typically prefix all class name's with the initials of an application, in this case of briansays it's 'bs'. 
+Then I try to create a semantic name that tells someone what DOM element they are manipulating without having to look it up.
+-I always put my media queries at the bottom of my stylesheet so the cascade can take care of annoying conflicts so I don't have to deal with it manually.
+***/
+
 /*****SASS ASSETS******/  
 
     // Variables 
@@ -35,15 +55,17 @@ $button-color: #fff;
 @import "reset";
 @import url(http://fonts.googleapis.com/css?family=Delius);
 
+/*****APPLICATION STYLING******/
+
 body {
     font-family: 'Delius', cursive;
+    min-width: 1080px;
 }
-
-/*****APPLICATION STYLING******/
 
 .container {
     width: $base-width;
     margin: 0 25%;
+    float: left;
 }
 
 header {
@@ -55,13 +77,16 @@ header {
 }   header p {
         text-align: center;
         display: inline-block;
-        margin-left: 1%;
+        width: 90%;
+        margin: 0 5%;
 }
 
 section {
     width: 100%;
     float: left;
-    margin: 2% 0 10% 0;
+    margin: 2% 0 4% 0;
+}   .Napoleon {
+        margin: 2% 0 30% 0;
 }
 
 .bsTextBubble {
@@ -73,6 +98,7 @@ section {
     line-height: 100px;
     background-color: #fff;
     border: 8px solid $text-bubble-color;
+    display: inline-block;
     @include border-radius($text-bubble-radius);
     @include box-shadow(2px, 2px, 4px, 0, #888);
     textarea {
@@ -94,12 +120,10 @@ section {
 }   .rightBubble:after, .leftBubble:after {
         border: 30px solid;
 }   .rightBubble:before {
-    //    left: 370px;
         right: -4.8em;
         top: 90px;
         border-color: transparent transparent $text-bubble-color $text-bubble-color;
 }   .rightBubble:after {
-    //    left: 363px;
         right: -3.75em;
         top: 94px;
         border-color: transparent transparent #fff #fff;
@@ -136,44 +160,47 @@ section {
 }
 
 .leftOrientation {
-//    display: inline;
-//    float: left;
     position: absolute;
     margin-left: -9%;
+}   .leftOrientation.replyPic {
+        margin: 6% 0 0 -4%;
 }
 .rightOrientation {
-//    display: inline;
-//    float: right;
     position: absolute;
-    right: 12%;
-}/*
-.napoleon {
-    position: relative; 
-    top: -15%;
-    right: 7%;
-}*/
-.replyPic {
-    margin-top: 11%;
+    right: 14%;
+}   .rightOrientation.replyPic {
+        margin-top: 6%;
+        right: 20%;
 }
 
-/*  .bsTextBubble input {
-        width: 100%;
-        height: 100%;
-} */
-
-
-footer p {
+footer {
+    width: 100%;
+    margin: 0;
+    background-color: #eee;
+    display: block;
     position: fixed;
-    bottom: 5px;
-    left: 5px;
-    width: 25%;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    padding: 0.7% 0;
+}   footer p {
+        position: relative;
+        margin-left: 1%;
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (max-width: 1068px) and (min-width: 768px)  {
-
+@media screen and (max-width: 1468px) and (min-width: 1024px)  {
     .container {
-        width: $base-width;
+        width: 80%;
+        margin: 0 10%;
     }
-
+    .rightOrientation {
+        right: 0%;
+    }
+    .leftOrientation.replyPic, .rightOrientation.replyPic {
+        margin-top: 8%;
+    }
+    .rightOrientation.replyPic {
+        right: 5%;
+    }
 }

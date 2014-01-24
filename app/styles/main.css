@@ -1,4 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Delius);
+/***BRIAN'S CSS NOTES
+1) I believe that CSS is a deceptively difficult 'language'. Although CSS doesn't have very much functionality and it is very easy to make the application do things with CSS,
+constructing stable CSS that will behave normally across radically different viewports can be very, very hard. This application demonstrates my ability to do that at a high level.
+The text box and the text arrow is pure CSS. It can adapt intelligently to the full scope of desktop / laptop sizes without losing it's position. The same is true of the images.
+I didn't need to brute-force my way through extensive media query targeting. 
+2) My Style Conventions: I like to seperate unrelated styling blocks by a newline and group related styling in uninterrupted blocks.
+I relate parent and child styles by attaching the child to the parent and adding an indentation, like so: 
+.parent {
+    styling: styling!;
+}   .child {
+        styling: OMGSTYLING!;
+}
+-Whenever I can, I like to set a parent class name and then dive into it's children with attributes. I never go deeper than three selectors. Ever.
+-I would normally not use a plain selector like 'header', because it causes conflicts as an application grows and therefore is not maintaible. 
+However, I did that in the case of briansays because it's a small application that I knew wouldn't grow. 
+-Naming convention: to prevent naming conflicts I typically prefix all class name's with the initials of an application, in this case of briansays it's 'bs'. 
+Then I try to create a semantic name that tells someone what DOM element they are manipulating without having to look it up.
+-I always put my media queries at the bottom of my stylesheet so the cascade can take care of annoying conflicts so I don't have to deal with it manually.
+***/
 /*****SASS ASSETS******/
 /*****RESETS******/
 /* line 9, reset.scss */
@@ -56,45 +75,53 @@ input:focus, input:hover, textarea:focus, textarea:hover {
   border: 0 solid #fff;
 }
 
-/* line 38, main.scss */
+/*****APPLICATION STYLING******/
+/* line 60, main.scss */
 body {
   font-family: 'Delius', cursive;
+  min-width: 1080px;
 }
 
-/*****APPLICATION STYLING******/
-/* line 44, main.scss */
+/* line 65, main.scss */
 .container {
   width: 50%;
   margin: 0 25%;
+  float: left;
 }
 
-/* line 49, main.scss */
+/* line 71, main.scss */
 header {
   width: 70%;
   margin: 1% 15%;
 }
 
-/* line 52, main.scss */
+/* line 74, main.scss */
 header h1 {
   font-size: 2em;
   text-align: center;
 }
 
-/* line 55, main.scss */
+/* line 77, main.scss */
 header p {
   text-align: center;
   display: inline-block;
-  margin-left: 1%;
+  width: 90%;
+  margin: 0 5%;
 }
 
-/* line 61, main.scss */
+/* line 84, main.scss */
 section {
   width: 100%;
   float: left;
-  margin: 2% 0 10% 0;
+  margin: 2% 0 4% 0;
 }
 
-/* line 67, main.scss */
+/* line 88, main.scss */
+.Napoleon {
+  margin: 2% 0 30% 0;
+}
+
+/* line 92, main.scss */
 .bsTextBubble {
   position: relative;
   width: 50%;
@@ -104,6 +131,7 @@ section {
   line-height: 100px;
   background-color: #fff;
   border: 8px solid #666666;
+  display: inline-block;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -113,14 +141,14 @@ section {
   -moz-box-shadow: 2px 2px 4px 0 #888888;
   box-shadow: 2px 2px 4px 0 #888888;
 }
-/* line 78, main.scss */
+/* line 104, main.scss */
 .bsTextBubble textarea {
   width: 99%;
   height: 97%;
   border: 0 solid #fff;
   box-shadow: 0 0 0 #fff;
 }
-/* line 84, main.scss */
+/* line 110, main.scss */
 .bsTextBubble textarea:hover, .bsTextBubble textarea:focus {
   background-image: -ms-linear-gradient(top, #999999 0%, white 3%);
   background-image: -moz-linear-gradient(top, #999999 0%, white 3%);
@@ -129,7 +157,7 @@ section {
   background-image: linear-gradient(to bottom, #999999 0%, #ffffff 3%);
 }
 
-/* line 87, main.scss */
+/* line 113, main.scss */
 .rightBubble:before, .rightBubble:after, .leftBubble:before, .leftBubble:after {
   content: ' ';
   position: absolute;
@@ -137,45 +165,45 @@ section {
   height: 0;
 }
 
-/* line 92, main.scss */
+/* line 118, main.scss */
 .rightBubble:before, .leftBubble:before {
   border: 35px solid;
 }
 
-/* line 94, main.scss */
+/* line 120, main.scss */
 .rightBubble:after, .leftBubble:after {
   border: 30px solid;
 }
 
-/* line 96, main.scss */
+/* line 122, main.scss */
 .rightBubble:before {
   right: -4.8em;
   top: 90px;
   border-color: transparent transparent #666666 #666666;
 }
 
-/* line 101, main.scss */
+/* line 126, main.scss */
 .rightBubble:after {
   right: -3.75em;
   top: 94px;
   border-color: transparent transparent #fff #fff;
 }
 
-/* line 106, main.scss */
+/* line 130, main.scss */
 .leftBubble:before {
   left: -75px;
   top: 90px;
   border-color: transparent #666666 #666666 transparent;
 }
 
-/* line 110, main.scss */
+/* line 134, main.scss */
 .leftBubble:after {
   left: -60px;
   top: 94px;
   border-color: transparent #fff #fff transparent;
 }
 
-/* line 114, main.scss */
+/* line 138, main.scss */
 .bsTextBubble button {
   border-bottom: 2px solid #999;
   border-right: 2px solid #ccc;
@@ -193,7 +221,7 @@ section {
   background-image: linear-gradient(to bottom, #ffffff 40%, #d9d9d9 100%);
 }
 
-/* line 125, main.scss */
+/* line 149, main.scss */
 .bsTextBubble button:hover {
   background-image: -ms-linear-gradient(top, white 40%, #eeeeee 100%);
   background-image: -moz-linear-gradient(top, white 40%, #eeeeee 100%);
@@ -202,13 +230,13 @@ section {
   background-image: linear-gradient(to bottom, #ffffff 40%, #eeeeee 100%);
 }
 
-/* line 127, main.scss */
+/* line 151, main.scss */
 .bsTextBubble button:active {
   border-bottom: 2px solid #777;
   border-right: 2px solid #777;
 }
 
-/* line 130, main.scss */
+/* line 154, main.scss */
 .bsTextBubble p {
   width: 100%;
   word-wrap: break-word;
@@ -217,45 +245,68 @@ section {
   height: 100%;
 }
 
-/* line 138, main.scss */
+/* line 162, main.scss */
 .leftOrientation {
   position: absolute;
   margin-left: -9%;
 }
 
-/* line 144, main.scss */
+/* line 165, main.scss */
+.leftOrientation.replyPic {
+  margin: 6% 0 0 -4%;
+}
+
+/* line 168, main.scss */
 .rightOrientation {
   position: absolute;
-  right: 12%;
+  right: 14%;
 }
 
- /*
-.napoleon {
-    position: relative; 
-    top: -15%;
-    right: 7%;
-}*/
-/* line 155, main.scss */
-.replyPic {
-  margin-top: 11%;
+/* line 171, main.scss */
+.rightOrientation.replyPic {
+  margin-top: 6%;
+  right: 20%;
 }
 
-/*  .bsTextBubble input {
-        width: 100%;
-        height: 100%;
-} */
-/* line 165, main.scss */
-footer p {
+/* line 176, main.scss */
+footer {
+  width: 100%;
+  margin: 0;
+  background-color: #eee;
+  display: block;
   position: fixed;
-  bottom: 5px;
-  left: 5px;
-  width: 25%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+  padding: 0.7% 0;
+}
+
+/* line 186, main.scss */
+footer p {
+  position: relative;
+  margin-left: 1%;
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (max-width: 1068px) and (min-width: 768px) {
-  /* line 175, main.scss */
+@media screen and (max-width: 1468px) and (min-width: 1024px) {
+  /* line 193, main.scss */
   .container {
-    width: 50%;
+    width: 80%;
+    margin: 0 10%;
+  }
+
+  /* line 197, main.scss */
+  .rightOrientation {
+    right: 0%;
+  }
+
+  /* line 200, main.scss */
+  .leftOrientation.replyPic, .rightOrientation.replyPic {
+    margin-top: 8%;
+  }
+
+  /* line 203, main.scss */
+  .rightOrientation.replyPic {
+    right: 5%;
   }
 }

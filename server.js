@@ -14,9 +14,7 @@ require('./lib/config/express')(app);
 var index = require('./lib/controllers');
 
 // Angular Routes
-app.get('/partials/*', index.partials);
 app.get('/*', index.index);
-app.post('/comment', index.comment);
 
 // Start server
 var port = process.env.PORT || 3000;

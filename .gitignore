@@ -4,4 +4,6 @@ public
 .sass-cache
 app/bower_components
 heroku
-views
+test
+TODO.txt
+dump.txt
