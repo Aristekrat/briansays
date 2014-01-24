@@ -13,8 +13,8 @@ require('./lib/config/express')(app);
 // Controllers
 var index = require('./lib/controllers');
 
-// Angular Routes
-app.get('/*', index.index);
+// Angular Routes 
+app.get('*', index.index);
 
 // Start server
 var port = process.env.PORT || 3000;
