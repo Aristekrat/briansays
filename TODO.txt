@@ -1,6 +1,0 @@
-2. Get and store post data in sessions.
-3. Try to increase reply pic size.
-4. Experiment with adding some fancy text arrow adaptiveness based on the pic.
-5. browser testing. 
-6. Write comments everywhere.
-7. Lint.
