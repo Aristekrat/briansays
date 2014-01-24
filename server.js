@@ -11,10 +11,12 @@ var app = express();
 require('./lib/config/express')(app);
 
 // Controllers
-var index = require('./lib/controllers');
+//var index = require('./lib/controllers');
 
-// Angular Routes 
-app.get('*', index.index);
+// Angular Routes
+app.get('*', function(req, res) {
+    res.sendfile('./index.html');
+});
 
 // Start server
 var port = process.env.PORT || 3000;
