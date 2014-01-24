@@ -15,7 +15,7 @@ require('./lib/config/express')(app);
 
 // Angular Routes
 app.get('*', function(req, res) {
-    res.sendfile('./index.html');
+    res.sendfile('/index.html');
 });
 
 // Start server
